@@ -245,7 +245,11 @@ export function useWebRTC() {
     const channel = dataChannelRef.current;
     if (!file || !channel) return;
     if (channel.readyState !== "open") {
-      await new Promise((resolve) => { channel.onopen = resolve; });
+      await new Promise((resolve, reject) => {
+        channel.onopen = () => resolve();
+        channel.onerror = () => reject(new Error("Channel failed to open"));
+        setTimeout(() => reject(new Error("Channel open timeout")), 10000);
+      });
     }
 
     channel.send(JSON.stringify({
