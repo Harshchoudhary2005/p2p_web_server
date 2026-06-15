@@ -20,18 +20,31 @@ Traditional file-sharing services route every file through a central server, whi
 
 ```
 p2p_web_server/
-├── backend/                  # Signaling server (Express + Socket.IO)
+├── backend/                       # Signaling server (Express + Socket.IO)
+│   ├── package.json
+│   ├── package-lock.json
 │   └── server.js
-└── frontend/                 # React app (Vite + Tailwind CSS)
-    └── src/
-        ├── components/
-        │   ├── DropZone.jsx       # File picker / drag-drop, size validation
-        │   ├── ShareLink.jsx      # Displays/copies the generated share link
-        │   └── TransferStatus.jsx # Progress bar, speed, status, errors
-        ├── hooks/
-        │   └── useWebRTC.js       # WebRTC connection, signaling, chunked transfer + hashing
-        └── utils/
-            └── helpers.js         # Room ID generation, SHA-256 chunk hashing, byte formatting
+├── frontend/                      # React app (Vite + Tailwind CSS)
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── DropZone.jsx       # File picker / drag-drop, size validation
+│   │   │   ├── ShareLink.jsx      # Displays/copies the generated share link
+│   │   │   └── TransferStatus.jsx # Progress bar, speed, status, errors
+│   │   ├── hooks/
+│   │   │   └── useWebRTC.js       # WebRTC connection, signaling, chunked transfer + hashing
+│   │   ├── utils/
+│   │   │   └── helpers.js         # Room ID generation, SHA-256 chunk hashing, byte formatting
+│   │   ├── App.jsx                # Root component, sender/receiver flow
+│   │   ├── index.css              # Tailwind base styles
+│   │   └── main.jsx                # React entry point
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   └── vite.config.js
+├── .gitignore
+└── README.md
 ```
 
 ## How It Works
@@ -81,6 +94,13 @@ Opens the Vite dev server (default `http://localhost:5173`).
 | P2P Communication | WebRTC (RTCPeerConnection + RTCDataChannel) |
 | Backend / Signaling | Node.js, Express.js, Socket.IO |
 | Hosting | Vercel/Netlify (frontend), Render/Railway (backend) |
+
+## Deployment Links
+
+- **Live App (Frontend):** https://p2p-web-server.vercel.app/
+- **Signaling Server (Backend):** https://p2p-web-server.onrender.com
+- **GitHub Repository:** _add public repo URL here_
+- **Demo Video:** _add Google Drive / YouTube link here_
 
 ## Known Limitations / Possible Extensions
 
