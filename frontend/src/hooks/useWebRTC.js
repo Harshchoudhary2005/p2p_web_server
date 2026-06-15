@@ -2,7 +2,7 @@ import { useState, useRef, useCallback } from "react";
 import { io } from "socket.io-client";
 import { hashChunk } from "../utils/helpers";
 
-const SIGNALING_SERVER_URL = "http://localhost:3001";
+const SIGNALING_SERVER_URL = "https://your-app.onrender.com";
 const CHUNK_SIZE = 16 * 1024;
 
 const ICE_SERVERS = {
