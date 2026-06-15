@@ -99,8 +99,7 @@ Opens the Vite dev server (default `http://localhost:5173`).
 
 - **Live App (Frontend):** https://p2p-web-server.vercel.app/
 - **Signaling Server (Backend):** https://p2p-web-server.onrender.com
-- **GitHub Repository:** _add public repo URL here_
-- **Demo Video:** _add Google Drive / YouTube link here_
+- **Demo Video:**to be added
 
 ## Known Limitations / Possible Extensions
 
