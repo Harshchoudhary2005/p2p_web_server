@@ -244,6 +244,9 @@ export function useWebRTC() {
     const file = fileRef.current;
     const channel = dataChannelRef.current;
     if (!file || !channel) return;
+    if (channel.readyState !== "open") {
+      await new Promise((resolve) => { channel.onopen = resolve; });
+    }
 
     channel.send(JSON.stringify({
       type: "metadata",
