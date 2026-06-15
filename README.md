@@ -82,13 +82,6 @@ Opens the Vite dev server (default `http://localhost:5173`).
 | Backend / Signaling | Node.js, Express.js, Socket.IO |
 | Hosting | Vercel/Netlify (frontend), Render/Railway (backend) |
 
-## Deployment Links
-
-- **Live App (Frontend):** https://p2p-web-server.vercel.app/
-- **Signaling Server (Backend):** https://p2p-web-server.onrender.com
-- **GitHub Repository:** _add public repo URL here_
-- **Demo Video:** _add Google Drive / YouTube link here_
-
 ## Known Limitations / Possible Extensions
 
 - No TURN server configured — transfers may fail on strict NATs/firewalls without a relay fallback.
